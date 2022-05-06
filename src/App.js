@@ -1,11 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import Page from './pages/Page';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Dynamic Component with trello Api as Back Office</h1>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path="/:name" element={<Page />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
