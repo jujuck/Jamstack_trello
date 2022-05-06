@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+## Getting a quick Back Office with Trello as a Back End
+Start cloning the project and run `npm install`;
+The `axios` and `react-router-dom` package are already there
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Let's start: Get your trello ready
+- 1 Open a trello account if needed
+- 2 Create a board with at least 2 Columns and 2 or 3 cards on each of them (Here is the public board I used to create this workshop. Have a look if you want https://trello.com/b/TXsA6WS9/dynamic-component)
+- 3 Complete cards with *Stamp*, *Title*, *Description*....
+- 4 Make your board Public available (On the top left, click on private and change the status)Now you can have all your board info on a json file, just adding  `.json` at the end of the URl.
 
-## Available Scripts
+## Prepare your app
+- 1 Use UseEffect and a State to fetch `https://trello.com/b/<TrelloKey>/<Board_name>.json`. For the purpose of this exercice, you will just need the *cards* items (An array of data with all your cards).
+- 2 `console.log()` the result and watch how you can pass it to subComponent via `props`.
+- 3 Create the subComponent and display your page with style using props directly from you data. Explore possibilities to display image, title, description...
 
-In the project directory, you can run:
 
-### `npm start`
+## Upgrade your app for more reactivity
+- 1 Now, under your last component on the return you will `.fitler()` on the data to keep only the cards of your actual list (With its id or name)
+- 2 Then `.map()` on the data and call a `getComponent` function. This one, will return the component needed based on the *data.labels[0].name*. Great !!!
+- 3 Don't forget to pass your data as props.
+- 4 Go back on Trello and add a card with an existing labels... Refresh your app. You should see the new brand component. You can now manage your page.
+- 5 You can now delete the old component on your `return`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Going further...
+- 1 Add a routing system on *App.jsx* and copy/paste your code on a *Home.jsx* page
+- 2 On the only route we have, use `/:page` on your path
+- 3 On the *Home.jsx* file, use UseParams to store the `page` param.
+- 4 On trello, create a new list, with a couple of cards with existing labels and get its id (*As shown before*)
+- 5 On the *Home.jsx*, add a mapping variable between the name of a page and its trello ID
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*Example const page = { "home": <IdList>, "products": <IdList>}*
+- 6 Change your Url to pass from one page to another... See
 
-### `npm test`
+## As a bonus
+- 1 Add a navigation on top and several other lists on trello
+- 2 Add an Error page (404)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Congratulations, you have now a full fonctionnal app with a trello Back Office... You can create as many component as you want and match them to stamp on trello. You can add lists as well and map them on your variable.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
