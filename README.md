@@ -1,6 +1,7 @@
 ## Getting a quick Back Office with Trello as a Back End
 Start cloning the project and run `npm install`;
-The `axios` and `react-router-dom` package are already there
+The `axios` and `react-router-dom` package are already there;
+You can follow the live coding of the project https://drive.google.com/file/d/1kwmU8YCNiwl2HOL7gBQDLYfFpZL3TCNV/view?usp=sharing
 
 ## Let's start: Get your trello ready
 - 1 Open a trello account if needed
