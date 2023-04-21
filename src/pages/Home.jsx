@@ -22,7 +22,7 @@ const Home = ({ cards, lists }) => {
   }
   return (
     <div className="App">
-      <h1>Dynamic Component with trello Api as Back Office TEST STETESFEDZ TEST AGAIN</h1>
+      <h1>Dynamic Component with trello Api as Back Office TEST STETESFEDZ TEST AGAIN AGAIN</h1>
       { cards
         .filter(card => card.idList === list.id)
         .map(card => getComponent(card))}
